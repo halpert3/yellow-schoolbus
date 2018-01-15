@@ -33,6 +33,9 @@ gem 'stamp'
 gem 'font-awesome-rails'
 gem 'awesome_print'
 gem 'rubocop', '~> 0.52.1', require: false
+gem 'bootstrap-sass'
+gem 'simple_form'
+gem 'jquery-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -1,4 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_parent_path(@parent) %> |
-<%= link_to 'Back', parents_path %>
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <h1>Parent Name</h1>
+    <table class="table table-striped table-bordered">
+      <thead></thead>
+      <tbody>
+        <tr>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="text-align:center"><%= @parent.name %></td>
+        </tr>
+        <td></td>
+      </tbody>
+    </table>
+    <%= link_to 'Edit ' + @parent.name, edit_parent_path(@parent) %> |
+    <%= link_to 'See all Parents', parents_path %>
+  </div>
+  <div class="col-md-2"></div>
+</div>
+
+
+

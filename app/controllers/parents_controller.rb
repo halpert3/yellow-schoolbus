@@ -62,13 +62,16 @@ class ParentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_parent
-      @parent = Parent.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_parent
+    @parent = Parent.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def parent_params
-      params.fetch(:parent, {})
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  #    def parent_params
+  #      params.fetch(:parent, {})
+  #    end
+  def parent_params
+    params.require(:parent).permit(:name)
+  end
 end
