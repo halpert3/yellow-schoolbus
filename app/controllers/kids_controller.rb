@@ -69,6 +69,10 @@ class KidsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def kid_params
-      params.fetch(:kid, {})
+      params.require(:kid).permit(
+        :name,
+        :grade,
+        :birthdate,
+        :parent_id)
     end
 end

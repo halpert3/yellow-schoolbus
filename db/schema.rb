@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180111212312) do
+ActiveRecord::Schema.define(version: 20180122224302) do
+
+  create_table "families", force: :cascade do |t|
+    t.integer "parent_id"
+    t.integer "kid_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "kids", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -18,12 +25,15 @@ ActiveRecord::Schema.define(version: 20180111212312) do
     t.string "name"
     t.integer "grade"
     t.date "birthdate"
+    t.integer "parent_id"
+    t.index ["parent_id"], name: "index_kids_on_parent_id"
   end
 
   create_table "parents", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.integer "kid_id"
   end
 
 end

@@ -72,6 +72,8 @@ class ParentsController < ApplicationController
   #      params.fetch(:parent, {})
   #    end
   def parent_params
-    params.require(:parent).permit(:name)
+    params.require(:parent).permit(
+      :name,
+      :kid_id)
   end
 end

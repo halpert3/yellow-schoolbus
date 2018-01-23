@@ -1,5 +1,17 @@
-<h1>New Kid</h1>
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <h1>New Kid</h1>
+      <br>
 
-<%= render 'form', kid: @kid %>
+      <%= render 'form', kid: @kid %>
 
-<%= link_to 'Back', kids_path %>
+      <%= link_to '<- Back to All Kids', kids_path %>
+
+
+    </div>
+    <div class="col-md-2"></div>
+  </div> <!-- row -->
+</div> <!-- container -->

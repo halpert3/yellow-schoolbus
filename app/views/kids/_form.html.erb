@@ -1,17 +1,51 @@
 <%= form_with(model: kid, local: true) do |form| %>
-  <% if kid.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(kid.errors.count, "error") %> prohibited this kid from being saved:</h2>
+<% if kid.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(kid.errors.count, "error") %> prohibited this kid from being saved:</h2>
 
-      <ul>
-      <% kid.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <ul>
+    <% kid.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
 <% end %>
+
+
+<div>
+  <%= "Kid's Name" %><br>
+  <%= form.text_field :name %>
+</div>
+<br>
+<div>
+  <%= "Parent 1" %><br>
+  <%= form.collection_select :parent_id, Parent.all, :id, :name %>
+</div>
+<br>
+<div>
+  <%= "Parent 2" %><br>
+  <%= form.collection_select :parent_id2, Parent.all, :id, :name %>
+</div>
+<br>
+<div>
+  <%= "Grade" %><br>
+  <%= form.number_field :grade %>
+</div>
+<br>
+<div>
+  <%= "Birthdate" %><br>
+  <%= form.date_field :birthdate, placeholder: "Birthdate" %>
+</div>
+<br>
+<!--
+<div>
+< %= form.hidden_field :parent_id, value: @parent_id %>
+</div>
+-->
+
+<div class="actions">
+  <%= form.button :Submit, class: "btn btn-medium btn-success" %>
+</div>
+<br>
+<% end %>
+

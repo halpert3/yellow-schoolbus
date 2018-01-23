@@ -1,10 +1,6 @@
 <%= form_with(model: parent, local: true) do |form| %>
 <!-- for for or form with? -->
-<div>
-  <%= "Parent's Name" %><br>
-  <%= form.text_field (:name) %>
 
-</div>
 
 
 <% if parent.errors.any? %>
@@ -19,7 +15,25 @@
 </div>
 <% end %>
 
+
+<%= form.text_field :name, placeholder: "Enter parent's name" %>
+<br>
+<br>
+
+
 <div class="actions">
-  <%= form.submit %>
+  <%= form.button :Submit, class: "btn btn-medium btn-success" %>
 </div>
+<br>
+
+
 <% end %>
+
+
+
+<!--
+Old button
+<div class="actions">
+< %= form.submit %>
+</div>
+-->
